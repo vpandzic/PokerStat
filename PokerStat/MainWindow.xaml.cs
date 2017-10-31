@@ -20,21 +20,40 @@ namespace PokerStat
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-
-            
-
-           
             InitializeComponent();
             //PROMJENA
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
+
+            this.ResizeMode = ResizeMode.NoResize;
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
         }
+
+
+        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            this.ResizeMode = ResizeMode.CanResize;
+            //NOP
+          /*  if(this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;
+            }*/
+        }
+
+
+        private void min_Window(object sender, RoutedEventArgs e) => this.WindowState = WindowState.Minimized;
+        private void close_Window(object sender, RoutedEventArgs e) => this.Close();
+
+        private void max_Window(object sender, RoutedEventArgs e) => this.WindowState = (this.WindowState == WindowState.Normal) ? WindowState.Maximized : WindowState.Normal;
+
+
+        //min_Window
     }
 }
