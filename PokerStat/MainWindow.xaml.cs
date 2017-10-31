@@ -25,10 +25,16 @@ namespace PokerStat
 
             
 
-            Console.WriteLine("B");
-            Console.WriteLine("C");
+           
             InitializeComponent();
 
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }
