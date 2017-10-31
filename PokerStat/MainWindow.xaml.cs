@@ -27,7 +27,7 @@ namespace PokerStat
 
            
             InitializeComponent();
-
+            //PROMJENA
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
