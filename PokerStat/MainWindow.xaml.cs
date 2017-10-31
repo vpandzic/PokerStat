@@ -20,15 +20,12 @@ namespace PokerStat
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-
-            
-
-           
-            InitializeComponent();
-
+           InitializeComponent();
         }
+
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -36,5 +33,8 @@ namespace PokerStat
                 DragMove();
             }
         }
+
+
+
     }
 }
