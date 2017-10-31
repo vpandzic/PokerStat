@@ -22,9 +22,13 @@ namespace PokerStat
     {
         public MainWindow()
         {
+
+            
+
             Console.WriteLine("B");
             Console.WriteLine("C");
             InitializeComponent();
+
         }
     }
 }
