@@ -10,15 +10,30 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        Title="MainWindow" Height="800" Width="800" MouseUp="Window_MouseUp" MouseDown="Window_MouseDown">
+        Title="MainWindow" Height="500" Width="500" MouseUp="Window_MouseUp" MouseDown="Window_MouseDown">
 
     <Grid>
-        <Ellipse Fill="White" Margin="10" >
+        <Rectangle Name="bottomRightSizeGrip"
+                Width="7"
+                Height="8"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Cursor="SizeNWSE"
+                   MouseDown="Resize_Init"
+                   MouseMove="Resizing_Form"
+                   MouseUp="Resize_End"
+                   
+            Fill="RED" Margin="0,0,87,62"/>
+
+        <Ellipse Fill="YellowGreen" Margin="10" Stroke="Black" StrokeThickness="2">
 
         </Ellipse>
-        <Button x:Name="closeWin" Content="X" HorizontalAlignment="Left" Margin="625,105,0,0" VerticalAlignment="Top" Width="15" Height="18" RenderTransformOrigin="1.659,1.243" Click="close_Window"/>
-        <Button x:Name="maxWin" Content="O" HorizontalAlignment="Left" Margin="605,105,0,0" VerticalAlignment="Top" Width="15" Height="18" RenderTransformOrigin="1.659,1.243" Click="max_Window"/>
-        <Button x:Name="minWin" Content="_" HorizontalAlignment="Left" Margin="585,105,0,0" VerticalAlignment="Top" Width="15" Height="18" RenderTransformOrigin="0.048,-1.042" Click="min_Window"/>
+        <Button x:Name="closeWin" Content="X (Close)" HorizontalAlignment="Left" Margin="215,455,0,0" VerticalAlignment="Top" Width="70" Height="18" RenderTransformOrigin="1.659,1.243" Click="close_Window" Background="Transparent" BorderThickness="0"/>
+        <Button x:Name="minWin" Content="- (Minimize)" HorizontalAlignment="Left" Margin="215,30,0,0" VerticalAlignment="Top" Width="70" Height="18" RenderTransformOrigin="0.048,-1.042" Click="min_Window" Background="Transparent" BorderThickness="0"/>
+        <Button Content="New Player Statistics" HorizontalAlignment="Left" Margin="67,174,0,0" VerticalAlignment="Top" Width="165" Background="Black" Foreground="White"/>
+        <Button Content="Close Player Statistics" HorizontalAlignment="Left" Margin="266,174,0,0" VerticalAlignment="Top" Width="165" Background="Black" Foreground="White"/>
+        <ComboBox HorizontalAlignment="Left" Margin="67,211,0,0" VerticalAlignment="Top" Width="364"/>
+        <ListBox HorizontalAlignment="Left" Height="147" Margin="67,238,0,0" VerticalAlignment="Top" Width="364"/>
 
 
     </Grid>

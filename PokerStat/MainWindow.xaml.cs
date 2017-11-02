@@ -29,7 +29,7 @@ namespace PokerStat
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
-            this.ResizeMode = ResizeMode.NoResize;
+            //this.ResizeMode = ResizeMode.NoResize;
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
@@ -53,7 +53,56 @@ namespace PokerStat
 
         private void max_Window(object sender, RoutedEventArgs e) => this.WindowState = (this.WindowState == WindowState.Normal) ? WindowState.Maximized : WindowState.Normal;
 
+        #region ResizeWindows
+        bool ResizeInProcess = false;
+        private void Resize_Init(object sender, MouseButtonEventArgs e)
+        {
+          if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                ResizeInProcess = true;
 
+                Rectangle senderRectangle = sender as Rectangle;
+                senderRectangle.CaptureMouse();
+            }
+        }
+
+        private void Resize_End(object sender, MouseButtonEventArgs e)
+        {
+            Rectangle senderRect = sender as Rectangle;
+            if (senderRect != null)
+            {
+                ResizeInProcess = false; ;
+                senderRect.ReleaseMouseCapture();
+            }
+        }
+
+        private void Resizing_Form(object sender, MouseEventArgs e)
+        {
+            if (ResizeInProcess)
+            {
+                Rectangle senderRectangle = (Rectangle)sender;
+                if (senderRectangle != null)
+                {
+                    if (senderRectangle.Name == "bottomRightSizeGrip")
+                    {
+                        Point mousePosition = e.GetPosition(this);
+                        senderRectangle.CaptureMouse();
+
+                        double newHeight = Height - mousePosition.Y;
+
+                        if (newHeight <= MaxHeight && newHeight > MinHeight)
+                        {
+                            Point absoluteMousePosition = PointToScreen(mousePosition);
+                            Height = newHeight;
+                            Top = absoluteMousePosition.Y;
+                        }
+                    }
+                }
+                
+                
+            }
+        }
+#endregion
         //min_Window
     }
 }
