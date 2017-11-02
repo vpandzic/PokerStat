@@ -28,12 +28,12 @@ namespace PokerStat
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            
             //this.ResizeMode = ResizeMode.NoResize;
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            //if (e.LeftButton == MouseButtonState.Pressed)
+            //{
+            //    DragMove();
+            //}
         }
 
 
@@ -60,7 +60,7 @@ namespace PokerStat
           if (e.LeftButton == MouseButtonState.Pressed)
             {
                 ResizeInProcess = true;
-
+                this.ResizeMode = ResizeMode.CanResize;
                 Rectangle senderRectangle = sender as Rectangle;
                 senderRectangle.CaptureMouse();
             }
