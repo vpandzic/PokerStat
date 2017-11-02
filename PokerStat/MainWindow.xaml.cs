@@ -28,12 +28,12 @@ namespace PokerStat
         }
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
-            //this.ResizeMode = ResizeMode.NoResize;
-            //if (e.LeftButton == MouseButtonState.Pressed)
-            //{
-            //    DragMove();
-            //}
+
+            this.ResizeMode = ResizeMode.NoResize;
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
 
 
@@ -89,6 +89,7 @@ namespace PokerStat
                         senderRectangle.CaptureMouse();
 
                         double newHeight = Height - mousePosition.Y;
+                        
 
                         if (newHeight <= MaxHeight && newHeight > MinHeight)
                         {
@@ -96,6 +97,7 @@ namespace PokerStat
                             Height = newHeight;
                             Top = absoluteMousePosition.Y;
                         }
+
                     }
                 }
                 
