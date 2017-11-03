@@ -27,7 +27,7 @@
             Fill="RED" Margin="0,45,69,0"/>
 
         <Ellipse Fill="YellowGreen" Margin="10" Stroke="Black" StrokeThickness="2"/>
-        <Ellipse Fill="Transparent" HorizontalAlignment="Left" Height="100" Margin="110,13,0,0" VerticalAlignment="Top" Width="280" MouseUp="Window_MouseUp" MouseDown="Window_MouseDown"  Cursor="Cross"/>
+        <Ellipse Fill="Transparent" HorizontalAlignment="Left" Height="100" Margin="110,13,0,0" VerticalAlignment="Top" Width="280" MouseUp="Window_MouseUp" MouseDown="Window_MouseDown"  Cursor="ScrollAll"/>
         <Button x:Name="closeWin" Content="X (Close)" HorizontalAlignment="Center" Margin="215,0,215,23" VerticalAlignment="Bottom" Width="70" Height="18" RenderTransformOrigin="1.659,1.243" Click="close_Window" Background="Transparent" BorderThickness="0"/>
         <Button x:Name="minWin" Content="- (Minimize)" HorizontalAlignment="Center" Margin="215,35,215,0" VerticalAlignment="Top" Width="70" Height="18" RenderTransformOrigin="0.048,-1.042" Click="min_Window" Background="Transparent" BorderThickness="0"/>
         <Button Content="New Player Statistics" HorizontalAlignment="Left" Margin="67,174,0,0" VerticalAlignment="Top" Width="165" Background="Black" Foreground="White"/>
